@@ -15,6 +15,7 @@ const enteredValue = prompt('Maximum life for you and the monster.', '100');
 
 let chosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
+let lastLoggedEntry;
 
 if (isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
   chosenMaxLife = 100;
@@ -214,33 +215,37 @@ function healPlayerHandler() {
   endRound();
 }
 
-function printLogHandler() { 
-  // for(let i=0;i<battleLog.length;i++){    // for loop used
-  //   console.log(battleLog[i]);
-  // }  
-  // let i=0;
-  // for(const logEntry of battleLog){        //for-of loop used heres
-  //   console.log(logEntry);
-  //   console.log(i);
-  //   i++;
-  //}
-  // let j=0;
-  // while(j<3){
-  //   console.log(______);
-  //   j++
+function printLogHandler() {
+  // for (let i = 0; i < 3; i++) {
+  //   console.log('------------');
   // }
 
-  let i=0;
-  for(const logEntry of battleLog){         // for-in loop used here
-    console.log(`#${i}`);
-    for(const key in logEntry){
-      console.log(key);
-      console.log(`${key}=>${logEntry[key]}`);
+  // let j = 3;
+  // do {
+  //   console.log(j);
+  //   j++;
+  // } while (j < 3);
+
+  // for (let i = 10; i > 0;) {
+  //   i--;
+  //   console.log(i);
+  // }
+  
+  // for (let i = 0; i < battleLog.length; i++) {
+  //   console.log(battleLog[i]);
+  // }
+  let i = 0;
+  for (const logEntry of battleLog) {
+    if ((!lastLoggedEntry && lastLoggedEntry !== 0) || lastLoggedEntry < i) {
+      console.log(`#${i}`);
+      for (const key in logEntry) {
+        console.log(`${key} => ${logEntry[key]}`);
+      }
+      lastLoggedEntry = i;
+      break;
     }
     i++;
   }
-  
-
 }
 
 attackBtn.addEventListener('click', attackHandler);
