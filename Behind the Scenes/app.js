@@ -18,12 +18,27 @@
 // var undefined =5;
 // console.log(name);
 
-function getName(){
-  return prompt('your name:','');
+// function getName(){
+//   return prompt('your name:','');
+// }
+
+// function greet(){
+//   let userName = getName();
+//   console.log('Hello ' + userName);
+// }
+// greet(); 
+
+const addListenerBtn = document.getElementById('add-listener-btn');
+const clickableBtn = document.getElementById('clickable-btn');
+const messageInput = document.getElementById('click-message-input');
+
+function printMessage() { 
+  const value = messageInput.value;
+  console.log(value || 'Clicked me!');
 }
 
-function greet(){
-  let userName = getName();
-  console.log('Hello ' + userName);
+function addListener() {
+  clickableBtn.addEventListener('click', printMessage);
 }
-greet(); 
+
+addListenerBtn.addEventListener('click', addListener);
