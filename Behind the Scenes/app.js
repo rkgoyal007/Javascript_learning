@@ -13,6 +13,17 @@
 // console.log(name);
 // greet(); 
 
-console.log(name);
+//'use strict';
+// let name ='Max';
+// var undefined =5;
+// console.log(name);
 
-var name ='Max';
+function getName(){
+  return prompt('your name:','');
+}
+
+function greet(){
+  let userName = getName();
+  console.log('Hello ' + userName);
+}
+greet(); 
