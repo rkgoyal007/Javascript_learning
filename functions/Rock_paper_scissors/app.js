@@ -75,7 +75,7 @@ startGameBtn.addEventListener('click', () => {
 });
 
 
-//Not related to the game
+//Rest argument
 
 //  const sumUp = (...numbers) => {
 //  const validateNumber =(number)=>{
@@ -87,5 +87,24 @@ startGameBtn.addEventListener('click', () => {
 //   }
 //   return sum;
 // };
-
 // console.log(sumUp(2,3,4,5,5));
+
+
+//Callback function
+
+//  const sumUp = (resultHandler, ...numbers) => {
+//  const validateNumber =(number)=>{
+//     return isNaN(number) ? 0: number; 
+//   };
+//   let sum=0;
+//   for(const num of numbers){
+//     sum += validateNumber(num);
+//   }
+//   resultHandler(sum);
+// };
+
+// const showResult = (result)=>{
+//   alert('The result after adding all the number is'+ result);
+// };
+
+// sumUp(showResult,2,3,4,5,5); 
