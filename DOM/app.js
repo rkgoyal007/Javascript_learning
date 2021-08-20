@@ -26,5 +26,10 @@
 // liFirst.parentNode              // shows parent Node
 // liFirst.closest('body');        // accessing anncestor
 
+//understanding sibling traversal
+// const ul = document.querySelector('ul');
+// console.log(ul.nextElementSibling);
+// console.log(ul.previousElementSibling);
+
 
 
