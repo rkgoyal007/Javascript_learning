@@ -111,7 +111,7 @@ startGameBtn.addEventListener('click', () => {
 
 
 
-//Bind()
+//Bind() Mehthod
 
 // const combine = (resultHandler, operation, ...numbers) => {
 //   const validateNumber = number => {
