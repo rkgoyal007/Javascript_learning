@@ -33,12 +33,10 @@
 
 
 //Styling using js
-
 const section = document.querySelector('section');
 const button = document.querySelector('button');
 
-
-// section.className ='';   // Reset the class of section
+// section.className ='';            // Reset the class of section
 
 button.addEventListener('click', ()=>{
   // if(section.className = 'red-bg visible'){
@@ -46,12 +44,25 @@ button.addEventListener('click', ()=>{
   // } else{
   //   section.className = 'red-bg visible';
   // }
+
   //section.classList.toggle('visible');
   section.classList.toggle('invisible');
-
 })
 
 
+//section.innerHTML = '<h2>A new title!</h2>'   //It replaces current section childrens to <h2> tag
 
+// const list = document.querySelector('ul');
+// list.innerHTML = list.innerHTML + '<li>Item 4</li>'       // inserted a new element
+
+// const div = document.querySelector('div')
+// div.insertAdjacentHTML('beforeend', '<p>something went wrong!');     // creating new node 
+
+const list = document.querySelector('ul');
+
+const newLi = document.createElement('li');  // creating new list item
+newLi.textContent = 'Item 4';
+list.appendChild('newLi');         // appended new list item
+ 
 
 
