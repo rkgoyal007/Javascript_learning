@@ -58,11 +58,17 @@ button.addEventListener('click', ()=>{
 // const div = document.querySelector('div')
 // div.insertAdjacentHTML('beforeend', '<p>something went wrong!');     // creating new node 
 
-const list = document.querySelector('ul');
+// const list = document.querySelector('ul');
 
-const newLi = document.createElement('li');  // creating new list item
-newLi.textContent = 'Item 4';
-list.appendChild('newLi');         // appended new list item
- 
+// const newLi = document.createElement('li');  // creating new list item 
+// newLi.textContent = 'Item 4';
+// list.append(newLi);         // appended new list item
+// list .append('some text');   // appended some text
+// list .prepend('some text');  // inserted text at biggining
 
-
+// const list = document.querySelector('ul');
+// const newLi = document.createElement ('li');
+// newLi.textContent = 'Item 4';
+// list.lastElementChild.after(newLi);
+// //list.firstElementChild.replaceWith(newLi);
+// list.lastElementChild.replaceWith(newLi);    // replace newly created item with last child node
