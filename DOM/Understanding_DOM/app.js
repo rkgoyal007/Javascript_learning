@@ -76,6 +76,6 @@ button.addEventListener('click', ()=>{
 // const newLi2 =newLi.cloneNode(true);  // cloning of Node
 // list.append(newLi,newLi2);
 
-const list = document.querySelector('ul');
-list.remove();                                     // removing list
-list.parentElement.removeChild(list);              // removing list in another way
+// const list = document.querySelector('ul');
+// list.remove();                                     // removing list
+// list.parentElement.removeChild(list);              // removing list in another way
