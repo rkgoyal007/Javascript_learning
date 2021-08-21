@@ -68,7 +68,14 @@ button.addEventListener('click', ()=>{
 
 // const list = document.querySelector('ul');
 // const newLi = document.createElement ('li');
-// newLi.textContent = 'Item 4';
-// list.lastElementChild.after(newLi);
-// //list.firstElementChild.replaceWith(newLi);
-// list.lastElementChild.replaceWith(newLi);    // replace newly created item with last child node
+// newLi.textContent = 'Item 4'; 
+//list.lastElementChild.after(newLi);
+//list.firstElementChild.replaceWith(newLi);
+//list.lastElementChild.replaceWith(newLi);    // replace newly created item with last child node
+
+// const newLi2 =newLi.cloneNode(true);  // cloning of Node
+// list.append(newLi,newLi2);
+
+const list = document.querySelector('ul');
+list.remove();                                     // removing list
+list.parentElement.removeChild(list);              // removing list in another way
