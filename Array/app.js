@@ -28,15 +28,21 @@
 //   }
 // }
 
-const hobbies = ['sports','cooking'];
-hobbies.push('reading');
-hobbies.unshift('coding');
-hobbies.splice(0,0,'good food');     // inserted 1 element at index 0
-console.log(hobbies);
-hobbies.splice(1,2);                // delete 2 element at index 1
-console.log(hobbies);
+// const hobbies = ['sports','cooking'];
+// hobbies.push('reading');
+// hobbies.unshift('coding');
+// hobbies.splice(0,0,'good food');     // inserted 1 element at index 0
+// console.log(hobbies);
+// hobbies.splice(1,2);                // delete 2 element at index 1
+// console.log(hobbies);
 
-const removedElements = hobbies.splice(2,1);
+// const removedElements = hobbies.splice(2,1);
+// hobbies.splice(-1,1);              // delete last indexed element
+// console.log(hobbies);
 
-hobbies.splice(-1,1);              // delete last indexed element
-console.log(hobbies);
+const testResults = [5,1.5,5.3,8,-4]
+const storedResults = testResults.slice();      // make a copy of array
+const newResults = testResults.slice(0,2);  
+const Results = testResults.slice(2);   // copy from 2nd index to last index
+testResults.push(3);                        
+console.log(testResults,storedResults,newResults);
