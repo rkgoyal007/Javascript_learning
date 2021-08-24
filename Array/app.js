@@ -55,17 +55,43 @@
 
 
 // forEach()
-const prices = [3,4,6,7.3 ,5.6];
-const tax = 0.19;
-const taxAdjustedPrices = [];
+// const prices = [3,4,6,7.3 ,5.6];
+// const tax = 0.19;
+// const taxAdjustedPrices = [];
 
 // for(const price of prices){
 //   taxAdjustedPrices.push(price*(1+tax));
 // }
 
-prices.forEach((price,idx,prices) => {
-  const priceObj ={index : idx , taxAdjustedPrices : price*(1+tax)};
-  taxAdjustedPrices.push(priceObj); 
-})
-console.log(taxAdjustedPrices);
+// prices.forEach((price,idx,prices) => {
+//   const priceObj ={index : idx , taxAdjustedPrices : price*(1+tax)};
+//   taxAdjustedPrices.push(priceObj); 
+// })
+// console.log(taxAdjustedPrices);
+
+
+//map()
+// const prices = [3,4,6,7.3 ,5.6];
+// const tax = 0.19;
+
+// const taxAdjustedPrices = prices.map((price,idx,prices) => {
+//   const priceObj ={index : idx , taxAdjustedPrices : price*(1+tax)};
+//   return priceObj; 
+// })
+// console.log(prices,taxAdjustedPrices);
+
+//sort() and reverse()
+const prices = [3,4,8,7.3 ,5.6];
+const sortedPrices = prices.sort((a,b) => {
+  if(a>b){
+  return 1;
+   } else if(a === b){
+     return 0;
+   } else {
+     return -1;
+   } 
+});
+console.log(sortedPrices);
+console.log(sortedPrices.reverse());
+
 
