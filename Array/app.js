@@ -40,9 +40,15 @@
 // hobbies.splice(-1,1);              // delete last indexed element
 // console.log(hobbies);
 
-const testResults = [5,1.5,5.3,8,-4]
-const storedResults = testResults.slice();      // make a copy of array
-const newResults = testResults.slice(0,2);  
-const Results = testResults.slice(2);   // copy from 2nd index to last index
-testResults.push(3);                        
-console.log(testResults,storedResults,newResults);
+// const testResults = [5,1.5,5.3,8,-4]
+// const storedResults = testResults.slice();      // make a copy of array
+// const newResults = testResults.slice(0,2);  
+// const Results = testResults.slice(2);   // copy from 2nd index to last index
+// testResults.push(3);                        
+// console.log(testResults,storedResults,newResults); 
+
+// const storedResult = testResults.concat([2,3]);       // add items then make copy of array
+// console.log(testResults,storedResult);      
+
+// console.log(testResults.indexOf(5.3));               // gives index of item
+// console.log(testResults.included(10));               // gives boolean value ,true if value exists in array
