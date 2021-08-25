@@ -104,8 +104,21 @@
 
 
 //Arrow function
+// const prices = [3,4,8,7.3 ,5.6];
+// const filteredPrices = prices.filter(price =>  price > 6);       // Arrow function
+// console.log(filteredPrices); 
+
+// const prices = [3,4,8,7.3 ,5.6];
+// let sum = 0;
+// prices.forEach((price) => {
+//   sum+=price;
+// })
+// console.log(sum);
+
+//Reduce method
 const prices = [3,4,8,7.3 ,5.6];
-const filteredPrices = prices.filter(price =>  price > 6);       // Arrow function
-console.log(filteredPrices); 
-
-
+// const sum = prices.reduce((preValue,curValue,curIndex,prices) =>{
+//   return preValue+curValue ;   
+// },);
+const sum = prices.reduce((preValue,curValue) =>preValue+curValue,0);   // Arrow function
+console.log(sum);
