@@ -8,4 +8,6 @@ const person = {
   }
 };
 
+person.isAdmin = true;      // adding property in object
+delete person.age;          // deletion in object 
 person.greet(); 
