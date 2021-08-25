@@ -149,6 +149,8 @@
 // console.log(copiedPersons);
 
 //Array Destructuring
-const nameData = ['rahul','goyal','neha',5,78];
-const [firstName,lastName,...otherInfo] = nameData;
-console.log(firstName,lastName,otherInfo);
+// const nameData = ['rahul','goyal','neha',5,78];
+// const [firstName,lastName,...otherInfo] = nameData;
+// console.log(firstName,lastName,otherInfo);
+
+
