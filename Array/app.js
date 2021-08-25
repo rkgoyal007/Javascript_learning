@@ -116,9 +116,20 @@
 // console.log(sum);
 
 //Reduce method
-const prices = [3,4,8,7.3 ,5.6];
+//const prices = [3,4,8,7.3 ,5.6];
 // const sum = prices.reduce((preValue,curValue,curIndex,prices) =>{
 //   return preValue+curValue ;   
 // },);
-const sum = prices.reduce((preValue,curValue) =>preValue+curValue,0);   // Arrow function
-console.log(sum);
+// const sum = prices.reduce((preValue,curValue) =>preValue+curValue,0);   // Arrow function
+// console.log(sum);
+
+
+//split() use to convert string to array
+//join() used to convert array  to string
+const data = 'new york;10.99;2000';
+const transformedData = data.split(';');
+console.log(transformedData);
+
+const nameFragments = ['max','rahul'];
+const name = nameFragments.join(' ');
+console.log(name);
