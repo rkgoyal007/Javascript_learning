@@ -135,16 +135,20 @@
 // console.log(name);
 
 // Soread operator
-const nameFragments = ['rahul','goyal'];
-const copiedNameFragments = [...nameFragments];
-console.log(nameFragments,copiedNameFragments);
+// const nameFragments = ['rahul','goyal'];
+// const copiedNameFragments = [...nameFragments];
+// console.log(nameFragments,copiedNameFragments);
 
-const prices = [4,5,6,7,8,5,6];
-const minNumber = Math.min(...prices);
-console.log(minNumber);
+// const prices = [4,5,6,7,8,5,6];
+// const minNumber = Math.min(...prices);
+// console.log(minNumber);
 
-const persons = [{name:'max', age:34 },{name: 'rahul', age:24}];
+// const persons = [{name:'max', age:34 },{name: 'rahul', age:24}];
 //const copiedPersons = [...persons];                         //it just copy the reference of objects
-const copiedPersons = persons.map(person => ({name: person.name,age: person.age}));
-console.log(copiedPersons);
+// const copiedPersons = persons.map(person => ({name: person.name,age: person.age}));
+// console.log(copiedPersons);
 
+//Array Destructuring
+const nameData = ['rahul','goyal','neha',5,78];
+const [firstName,lastName,...otherInfo] = nameData;
+console.log(firstName,lastName,otherInfo);
