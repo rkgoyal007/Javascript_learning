@@ -1,3 +1,4 @@
+'use strict';
 const addMovieBtn = document.getElementById('add-movie-btn');
 const searchBtn = document.getElementById('search-btn');
 
@@ -14,15 +15,18 @@ const renderMovies = (filter = '') => {
   }
   movieList.innerHTML = '';
 
-  const filteredMovies = !filter ? movies: movies.filter(movie => movie.info.title.includes(filter));
+  const filteredMovies = !filter
+    ? movies
+    : movies.filter(movie => movie.info.title.includes(filter));
 
   filteredMovies.forEach(movie => {
     const movieEl = document.createElement('li');
     const { info, ...otherProps } = movie;
     console.log(otherProps);
     // const { title: movieTitle } = info;
-    // const { getFormattedTitle } = movie;
-    let text = movie.getFormattedTitle() + ' - ';
+    let { getFormattedTitle } = movie;
+    // getFormattedTitle = getFormattedTitle.bind(movie);
+    let text = getFormattedTitle.apply(movie) + ' - ';
     for (const key in info) {
       if (key !== 'title') {
         text = text + `${key}: ${info[key]}`;
@@ -38,7 +42,7 @@ const addMovieHandler = () => {
   const extraName = document.getElementById('extra-name').value;
   const extraValue = document.getElementById('extra-value').value;
 
-  if (title.trim() === '' || extraName.trim() === '' || extraValue.trim() === '') {
+  if (title.trim() === '' || extraName.trim() === '' ||  extraValue.trim() === '') {
     return;
   }
 
@@ -48,7 +52,8 @@ const addMovieHandler = () => {
       [extraName]: extraValue
     },
     id: Math.random().toString(),
-    getFormattedTitle: function() {
+    getFormattedTitle() {
+      console.log(this);
       return this.info.title.toUpperCase();
     }
   };
@@ -58,6 +63,7 @@ const addMovieHandler = () => {
 };
 
 const searchMovieHandler = () => {
+  console.log(this);
   const filterTerm = document.getElementById('filter-title').value;
   renderMovies(filterTerm);
 };
