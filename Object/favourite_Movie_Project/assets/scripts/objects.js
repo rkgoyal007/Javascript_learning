@@ -4,22 +4,28 @@
  const movies =[];
 
  const renderMovies = () => {
-   const movieList =  document.getElementById('movie-list');
-   if(movies.length === 0){
-     movieList.classList.remove('visible');
-     return;
-    } else {
-      movieList.classList.add('visible');
+  const movieList = document.getElementById('movie-list');
+
+  if (movies.length === 0) {
+    movieList.classList.remove('visible');
+    return;
+  } else {
+    movieList.classList.add('visible');
+  }
+  movieList.innerHTML = '';
+
+  movies.forEach((movie) => {
+    const movieEl = document.createElement('li');
+    let text = movie.info.title + ' - ';
+    for (const key in movie.info) {
+      if (key !== 'title') {
+        text = text + `${key}: ${movie.info[key]}`;
+      }
     }
-    movieList.innerHTML =``;
-
-    movies.forEach((movie) => {
-      const movieEl = document.createElement('li');
-      movieEl.textContent = movie.info.title;
-      movieList.append(movieEl);
-    });
- };
-
+    movieEl.textContent = text;
+    movieList.append(movieEl);
+  });
+};
 
  const addMovieHandler = () => {
    const title = document.getElementById('title').value;
