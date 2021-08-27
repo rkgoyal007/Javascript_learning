@@ -12,8 +12,8 @@ class Product {
   } 
 }
 
-const productList = {
-  products: [
+class ProductList {
+  products = [
     new Product(
       'A Pillow',
       'https://wakefit-co.s3.ap-south-1.amazonaws.com/img/pillow-cushions/BG/2.jpg',
@@ -26,7 +26,10 @@ const productList = {
       'A carpet which you might like - or not.',
       89.99
     )
-  ],
+  ];
+
+  constructor() {};
+
   render() {
     const renderHook = document.getElementById('app');
     const prodList = document.createElement('ul');
@@ -51,4 +54,5 @@ const productList = {
   }
 };
 
+const productList = new ProductList();
 productList.render();
