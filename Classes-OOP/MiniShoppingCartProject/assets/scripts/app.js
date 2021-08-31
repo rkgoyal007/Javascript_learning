@@ -156,9 +156,9 @@ class ProductList extends Component {
     this.createRootElement('ul', 'product-list', [
       new ElementAttribute('id', 'prod-list')
     ]);
-    if (this.#products && this.#products.length > 0) {
+    if (this.products && this.products.length > 0) {
       this.renderProducts();
-    }
+    } 
   }
 }
 
