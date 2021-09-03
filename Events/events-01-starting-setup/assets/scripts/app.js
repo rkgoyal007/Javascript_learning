@@ -9,7 +9,7 @@ class DOMHelper {
     const element = document.getElementById(elementId);
     const destinationElement = document.querySelector(newDestinationSelector);
     destinationElement.append(element);
-    element.scrollIntoView({behavior:'smooth'});
+    element.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
@@ -39,7 +39,7 @@ class Component {
 }
 
 class Tooltip extends Component {
-  constructor(closeNotifierFunction,text,hostElementId) {
+  constructor(closeNotifierFunction, text, hostElementId) {
     super(hostElementId);
     this.closeNotifier = closeNotifierFunction;
     this.text = text;
@@ -58,7 +58,7 @@ class Tooltip extends Component {
     const tooltipBody = document.importNode(tooltipTemplate.content, true);
     tooltipBody.querySelector('p').textContent = this.text;
     tooltipElement.append(tooltipBody);
-    
+
     const hostElPosLeft = this.hostElement.offsetLeft;
     const hostElPosTop = this.hostElement.offsetTop;
     const hostElHeight = this.hostElement.clientHeight;
@@ -66,12 +66,11 @@ class Tooltip extends Component {
 
     const x = hostElPosLeft + 20;
     const y = hostElPosTop + hostElHeight - parentElementScrolling - 10;
-    
+
     tooltipElement.style.position = 'absolute';
-    tooltipElement.style.left = x + 'px';
+    tooltipElement.style.left = x + 'px'; // 500px
     tooltipElement.style.top = y + 'px';
 
-    console.log(this.hostElement.getBoundingClientRect());
     tooltipElement.addEventListener('click', this.closeTooltip);
     this.element = tooltipElement;
   }
@@ -92,18 +91,23 @@ class ProjectItem {
       return;
     }
     const projectElement = document.getElementById(this.id);
-    console.log(projectElement.dataset);
-    const toolTipText = projectElement.dataset.extraInfo;  
-    const tooltip = new Tooltip(() => {
-      this.hasActiveTooltip = false;
-    },toolTipText,this.id);
+    const tooltipText = projectElement.dataset.extraInfo;
+    const tooltip = new Tooltip(
+      () => {
+        this.hasActiveTooltip = false;
+      },
+      tooltipText,
+      this.id
+    );
     tooltip.attach();
     this.hasActiveTooltip = true;
   }
 
   connectMoreInfoButton() {
     const projectItemElement = document.getElementById(this.id);
-    const moreInfoBtn = projectItemElement.querySelector('button:first-of-type');
+    const moreInfoBtn = projectItemElement.querySelector(
+      'button:first-of-type'
+    );
     moreInfoBtn.addEventListener('click', this.showMoreInfoHandler.bind(this));
   }
 
@@ -112,7 +116,10 @@ class ProjectItem {
     let switchBtn = projectItemElement.querySelector('button:last-of-type');
     switchBtn = DOMHelper.clearEventListeners(switchBtn);
     switchBtn.textContent = type === 'active' ? 'Finish' : 'Activate';
-    switchBtn.addEventListener('click',this.updateProjectListsHandler.bind(null, this.id));
+    switchBtn.addEventListener(
+      'click',
+      this.updateProjectListsHandler.bind(null, this.id)
+    );
   }
 
   update(updateProjectListsFn, type) {
@@ -163,18 +170,20 @@ class App {
     finishedProjectsList.setSwitchHandlerFunction(
       activeProjectsList.addProject.bind(activeProjectsList)
     );
-   
-  setTimeout(this.startAnalytics(),3000);  
-  //const timerId = setTimeout(this.startAnalytics(),3000); 
-  //document.getElementById('stop-analytics-btn').addEventListener('click',()=>{clearTimeout(timerId)});
-  }  
 
-    static startAnalytics(){
-      const analyticsScript = document.createElement('script');
-      analyticsScript.src = 'assets/scripts/analytics.js';
-      analyticsScript.defer = true;
-      document.head.append(analyticsScript);
-    }
+    const timerId = setTimeout(this.startAnalytics, 3000);
+
+    document.getElementById('stop-analytics-btn').addEventListener('click', () => {
+      clearTimeout(timerId);
+    });
+  }
+
+  static startAnalytics() {
+    const analyticsScript = document.createElement('script');
+    analyticsScript.src = 'assets/scripts/analytics.js';
+    analyticsScript.defer = true;
+    document.head.append(analyticsScript);
+  }
 }
 
 App.init();
