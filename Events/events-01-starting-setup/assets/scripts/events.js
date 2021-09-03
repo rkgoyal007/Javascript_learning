@@ -75,6 +75,8 @@ const list = document.querySelector('ul');
 //   });
 // });
 
-list.addEventListener('click', event =>{                    // event delegation
-  event.target.classList.toggle('highlight');
+list.addEventListener('click', event =>{                   // event delegation
+  // console.log(event.currentTarget);
+  // event.target.classList.toggle('highlight');
+  event.target.closest('li').classList.toggle('highlight');
 });
