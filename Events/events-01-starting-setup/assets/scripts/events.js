@@ -65,3 +65,16 @@ button.addEventListener('click',event =>{
   console.log('CLICKED BUTTON');
   console.log(event);
 });
+
+const listItems = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+
+// listItems.forEach(listItem =>{ 
+//   listItem.addEventListener('click', event =>{
+//     event.target.classList.toggle('highlight');
+//   });
+// });
+
+list.addEventListener('click', event =>{                    // event delegation
+  event.target.classList.toggle('highlight');
+});
