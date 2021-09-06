@@ -27,9 +27,13 @@ function showHobbies(h){             // Impure function
 }
 showHobbies(hobbie);
 
+let multiplier = 1.1;
+
 function createTaxCalculator(tax){             // factory function
     function calculateTax(amount){
-        return amount*tax;
+        console.log(multiplier);
+        return amount*tax*multiplier;
+        
     }
     return calculateTax;
 }
@@ -37,6 +41,20 @@ function createTaxCalculator(tax){             // factory function
 const calculateVatAmount = createTaxCalculator(0.19);
 const calculateIncomeTaxAmount = createTaxCalculator(0.25);
 
+//multiplier = 2;                //multipler value will be change because it is changed before inner fun execution
+// tax = 0.28;                  // tax value won't change because outer function is already executed and
+                               // it has already passed tax value to inner function. 
 console.log(calculateVatAmount(100));
 console.log(calculateVatAmount(200));
+
+
+let userName = 'Max';
+function greetUser(){
+    let name = 'Anna';
+    console.log(`Hi ${name}`);
+}
+let name = 'Maximilian'
+
+userName = 'Manuel';
+greetUser();
 
