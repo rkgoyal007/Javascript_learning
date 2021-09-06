@@ -68,3 +68,45 @@ function powerOf(x,n){
     return n===1? x:(x*powerOf(x,n-1));
 }
 console.log(powerOf(2,3));
+
+// Recursion at advanced level
+const myself = {           
+    name : 'Rahul',
+    friends: [
+        {
+            name : 'Manuel',
+            friends : [
+                {
+                    name : 'chris',
+                    friends : [
+                        {
+                            name:'amilia'
+                        },
+                        {
+                            name: 'julia'
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name : 'julia'
+        }
+    ]
+
+};
+
+function getFreiendNames(person){
+    const collectedNames = [];
+
+    if(!person.friends){                          // loop exit condition
+        return []; 
+
+    }
+    for (const friend of person.friends){
+        collectedNames.push(friend.name);
+        collectedNames.push(...getFreiendNames(friend));
+    }
+    return collectedNames;
+}
+console.log(getFreiendNames(myself));
