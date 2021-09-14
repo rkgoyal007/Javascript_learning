@@ -7,7 +7,8 @@ const postList = document.querySelector("ul");
 function sendHttpRequest(method, url, data) {
   // const promise = new Promise((resolve, reject) => {
   //   const xhr = new XMLHttpRequest();
-
+  //   xhr.setRequestHeader('Content-type','applicatio/json');
+  
   //   xhr.open(method, url);
 
   //   xhr.responseType = "json";
@@ -26,12 +27,15 @@ function sendHttpRequest(method, url, data) {
   //   xhr.send(JSON.stringify(data));
   // });
   // return promise;
-  return fetch(url,{
+  return fetch(url, {
     method: method,
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": "application/json",
+    },
   }).then((response) => {
     return response.json();
-  }); 
+  });
 }
 
 async function fetchPosts() {
