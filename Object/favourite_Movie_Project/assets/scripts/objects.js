@@ -15,9 +15,7 @@ const renderMovies = (filter = '') => {
   }
   movieList.innerHTML = '';
 
-  const filteredMovies = !filter
-    ? movies
-    : movies.filter(movie => movie.info.title.includes(filter));
+  const filteredMovies = !filter ? movies : movies.filter(movie => movie.info.title.includes(filter));
 
   filteredMovies.forEach(movie => {
     const movieEl = document.createElement('li');

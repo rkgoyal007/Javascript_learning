@@ -41,7 +41,7 @@ const deleteMovieHandler = movieId => {
   }
   movies.splice(movieIndex, 1);
   const listRoot = document.getElementById('movie-list');
-  listRoot.children[movieIndex].remove();
+  listRoot.children[movieIndex].remove(); 
   // listRoot.removeChild(listRoot.children[movieIndex]);
   closeMovieDeletionModal();
   updateUI();
@@ -63,10 +63,7 @@ const startDeleteMovieHandler = movieId => {
   cancelDeletionButton.removeEventListener('click', closeMovieDeletionModal);
 
   cancelDeletionButton.addEventListener('click', closeMovieDeletionModal);
-  confirmDeletionButton.addEventListener(
-    'click',
-    deleteMovieHandler.bind(null, movieId)
-  );
+  confirmDeletionButton.addEventListener('click',deleteMovieHandler.bind(null, movieId));
 };
 
 const renderNewMovieElement = (id, title, imageUrl, rating) => {

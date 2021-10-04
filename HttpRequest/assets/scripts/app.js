@@ -86,6 +86,7 @@ async function createPost(title, content) {
 }
 
 fetchButton.addEventListener("click", fetchPosts);
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const enteredTitle = event.currentTarget.querySelector("#title").value;
@@ -96,9 +97,6 @@ form.addEventListener("submit", (event) => {
 postList.addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON") {
     const postId = event.target.closest("li").id;
-    sendHttpRequest(
-      "DELETE",
-      `https://jsonplaceholder.typicode.com/posts/${postId}`
-    );
+    sendHttpRequest("DELETE",`https://jsonplaceholder.typicode.com/posts/${postId}`);
   }
 });

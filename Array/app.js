@@ -119,7 +119,7 @@
 //const prices = [3,4,8,7.3 ,5.6];
 // const sum = prices.reduce((preValue,curValue,curIndex,prices) =>{
 //   return preValue+curValue ;   
-// },);
+// },0);
 // const sum = prices.reduce((preValue,curValue) =>preValue+curValue,0);   // Arrow function
 // console.log(sum);
 
@@ -134,7 +134,7 @@
 // const name = nameFragments.join(' ');
 // console.log(name);
 
-// Soread operator
+// Spread operator
 // const nameFragments = ['rahul','goyal'];
 // const copiedNameFragments = [...nameFragments];
 // console.log(nameFragments,copiedNameFragments);
