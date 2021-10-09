@@ -11,12 +11,10 @@ class PlaceFinder {
 
   locateUserHandler() {
     if (!navigator.geolocation) {
-      alert(
-        'Location feature is not available in your browser - please use a more modern browser or manually enter an address.'
-      );
+      alert('Location feature is not available in your browser - please use a more modern browser or manually enter an address.');
       return;
     }
-    const modal = new Modal('loading-modal-content', 'Loading location - please wait!');
+    const modal = new Modal('loading-modal-content', 'Loading location - please wait!');   
     modal.show();
     navigator.geolocation.getCurrentPosition(
       successResult => {
