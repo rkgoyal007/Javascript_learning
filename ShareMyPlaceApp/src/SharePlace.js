@@ -60,7 +60,9 @@ class PlaceFinder {
       },
       error => {
         modal.hide();
-        alert('Could not locate you unfortunately. Please enter an address manually!');
+        alert(
+          'Could not locate you unfortunately. Please enter an address manually!'
+        );
       }
     );
   }
@@ -72,7 +74,10 @@ class PlaceFinder {
       alert('Invalid address entered - please try again!');
       return;
     }
-    const modal = new Modal('loading-modal-content','Loading location - please wait!');
+    const modal = new Modal(
+      'loading-modal-content',
+      'Loading location - please wait!'
+    );
     modal.show();
     try {
       const coordinates = await getCoordsFromAddress(address);
