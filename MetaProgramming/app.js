@@ -79,8 +79,23 @@ const course = {
   title : 'javascript-the cpmplete guide'
 };
 
-Reflect.setPrototypeOf(course , {toString() {return this.title}});
+//Reflect.setPrototypeOf(course , {toString() {return this.title}});
 
 //Reflect.deleteProperty(course, 'title');
+//delete course.title
+//console.log(course.toString());
 
-console.log(course.toString());
+//Proxy API
+
+const courseHandler = {
+  get(obj, propertyName) {
+    console.log(propertyName);
+    if (propertyName === 'length') {
+      return 0;
+    }
+    return obj[propertyName] || 'NOT FOUND';
+  }
+};
+
+const pCourse = new Proxy(course, courseHandler);
+console.log(pCourse.title, pCourse.length, pCourse.rating);
