@@ -94,8 +94,15 @@ const courseHandler = {
       return 0;
     }
     return obj[propertyName] || 'NOT FOUND';
+  },
+  set(obj,propertyName,newValue){
+    if(propertyName === 'rating'){
+      return;
+    }
+    obj[propertyName] = newValue;
   }
 };
 
 const pCourse = new Proxy(course, courseHandler);
+pCourse.rating = 5;
 console.log(pCourse.title, pCourse.length, pCourse.rating);
