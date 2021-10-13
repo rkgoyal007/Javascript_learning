@@ -72,3 +72,15 @@ console.log([...company]);
 
 const persons = ['Max', 'Manu'];
 console.log(persons);
+
+// Reflect API
+
+const course = {
+  title : 'javascript-the cpmplete guide'
+};
+
+Reflect.setPrototypeOf(course , {toString() {return this.title}});
+
+//Reflect.deleteProperty(course, 'title');
+
+console.log(course.toString());
